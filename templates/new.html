@@ -1,9 +1,4 @@
-Tervetuloa Let's Talk About Life keskustelupalstalle! Julkaisuja tähän mennessä: {{ count }}
-<hr>
-{% for message in messages %}
-{{ message.content }}
-<hr>
-{% endfor %}
+Kerro jotain kivaa:
 <form action="/send" method="POST">
     Viesti: <br>
     <textarea name="content" rows="3" cols="40"></textarea>

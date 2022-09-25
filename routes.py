@@ -18,7 +18,7 @@ def login():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-        session["username"] = username
+        # session["username"] = username
         return redirect("/")
     return render_template("login.html")
 
