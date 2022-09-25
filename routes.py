@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import redirect, render_template, request
+from flask import redirect, render_template, request, session
 from flask_sqlalchemy import SQLAlchemy
 from app import app
 from db import db
@@ -18,6 +18,7 @@ def login():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
+        session["username"] = username
         return redirect("/new")
     return render_template("login.html")
 

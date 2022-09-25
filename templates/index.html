@@ -1,7 +1,11 @@
-Tervetuloa Let's Talk About Life keskustelupalstalle! Julkaisuja tähän mennessä: {{ count }}
+Tervetuloa Let's Talk About Life keskustelupalstalle! 
+Julkaisuja tähän mennessä: {{ count }}
+{% if session.username %}
 <hr>
 {% for message in messages %}
 {{ message.content }}
 <hr>
 {% endfor %}
-<a href="/login">Kirjaudu sisään lähettääksesi viestejä</a>
+{% else %}
+<a href="/login">Kirjaudu sisään nähdäksesi ja lähettääksesi viestejä</a>
+{% endif %}
