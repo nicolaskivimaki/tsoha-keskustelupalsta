@@ -1,1 +1,1 @@
-CREATE TABLE visitors (id SERIAL PRIMARY KEY, time TIMESTAMP);
+CREATE TABLE messages (id SERIAL PRIMARY KEY, content TEXT);

@@ -1,19 +1,24 @@
+from flask import Flask
+from flask import redirect, render_template, request
+from flask_sqlalchemy import SQLAlchemy
 from app import app
-from flask import redirect, render_template, request, session
+from db import db
+
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    result = db.session.execute("SELECT content FROM messages")
+    messages = result.fetchall()
+    return render_template("index.html", count=len(messages), messages=messages) 
 
-@app.route("/login",methods=["POST"])
-def login():
-    username = request.form["username"]
-    password = request.form["password"]
-    # TODO: check username and password
-    session["username"] = username
-    return redirect("/")
+@app.route("/new")
+def new():
+    return render_template("new.html")
 
-@app.route("/logout")
-def logout():
-    del session["username"]
+@app.route("/send", methods=["POST"])
+def send():
+    content = request.form["content"]
+    sql = "INSERT INTO messages (content) VALUES (:content)"
+    db.session.execute(sql, {"content":content})
+    db.session.commit()
     return redirect("/")
