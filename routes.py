@@ -18,7 +18,7 @@ def login():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-        return redirect("/")
+        return redirect("/new")
     return render_template("login.html")
 
 @app.route("/new")
