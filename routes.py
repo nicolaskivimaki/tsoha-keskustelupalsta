@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from app import app
 from db import db
 
-
 @app.route("/")
 def index():
     result = db.session.execute("SELECT content FROM messages")
@@ -19,7 +18,7 @@ def login():
         username = request.form["username"]
         password = request.form["password"]
         # session["username"] = username
-        return redirect("/")
+        return redirect("/new")
     return render_template("login.html")
 
 @app.route("/new")
