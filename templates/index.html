@@ -1,10 +1,10 @@
 <h1> Tervetuloa Let's Talk About Life -keskustelupalstalle!</h1> 
-<h2>Julkaisuja tähän mennessä: {{ count }}<h2>
+<h2>Julkaisuja tähän mennessä: {{ count }}</h2>
 <p>
-<h6>
+<hr>
 {% for message in messages %}
 {{ message.content }}
-<h6>
+<hr>
 <p>
 {% endfor %}
 <a href="/login">Kirjaudu sisään lähettääksesi viestejä</a>
