@@ -11,6 +11,16 @@ def index():
     messages = result.fetchall()
     return render_template("index.html", count=len(messages), messages=messages) 
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "GET":
+        return render_template("login.html")
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        return redirect("/")
+    return render_template("login.html")
+
 @app.route("/new")
 def new():
     return render_template("new.html")
