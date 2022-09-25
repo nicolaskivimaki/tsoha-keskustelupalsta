@@ -1,7 +1,5 @@
-from flask import Flask
 from app import app
 from flask import redirect, render_template, request, session
-from os import getenv
 
 @app.route("/")
 def index():
