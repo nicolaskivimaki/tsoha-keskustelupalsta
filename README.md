@@ -2,6 +2,14 @@
 
 Sovelluksessa näkyy keskustelualueita, joista jokaisella on tietty aihe. Alueilla on keskusteluketjuja, jotka muodostuvat viesteistä. Jokainen käyttäjä on peruskäyttäjä tai ylläpitäjä.
 
+Sovelluksen saa käyttöön [Herokussa](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)
+
+Sovelluksessa pystyy tällähetkellä:
+
+* Kirjautua sisään
+* Lukea keskustelupalstan postauksia
+* Postata oman postauksen palstalle
+
 Sovelluksen ominaisuuksia:
 
 * Käyttäjä voi kirjautua sisään ja ulos sekä luoda uuden tunnuksen.
