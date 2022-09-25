@@ -2,7 +2,7 @@
 
 Sovelluksessa näkyy keskustelualueita, joista jokaisella on tietty aihe. Alueilla on keskusteluketjuja, jotka muodostuvat viesteistä. Jokainen käyttäjä on peruskäyttäjä tai ylläpitäjä.
 
-Sovelluksen saa käyttöön [Herokussa](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)
+Sovelluksen saa käyttöön [Herokussa](https://tsoha-letstalkaboutlife.herokuapp.com/))
 
 Sovelluksessa pystyy tällähetkellä:
 
