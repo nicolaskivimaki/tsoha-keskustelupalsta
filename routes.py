@@ -1,11 +1,12 @@
 from app import app
 from flask import render_template, request, redirect
-import messages, users
+import messages, categories, users
 
 @app.route("/")
 def index():
-    list = messages.get_list()
-    return render_template("index.html", count=len(list), messages=list)
+    categories.create_categories()
+    list = categories.get_categories_list()
+    return render_template("index.html", count=len(list), categories=list)
 
 @app.route("/new")
 def new():
