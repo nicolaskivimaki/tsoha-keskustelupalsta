@@ -1,0 +1,13 @@
+<!doctype html>
+<title>Let's talk about life</title>
+<h1>Let's talk about life</h1>
+<a href="/">Etusivu</a>
+{% if session.user_id %}
+<a href="/logout">Kirjaudu ulos</a>
+{% else %}
+<a href="/login">Kirjaudu sisään</a>
+<a href="/register">Rekisteröidy</a>
+{% endif %}
+<hr>
+{% block content %}{% endblock %}
+

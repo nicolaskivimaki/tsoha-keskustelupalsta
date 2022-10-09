@@ -1,10 +1,18 @@
-<h2> Tervetuloa Let's Talk About Life -keskustelupalstalle!</h2> 
+{% extends "layout.html" %}
+{% block content %}
+<h2> Tervetuloa LTAL-keskustelupalstalle!</h2> 
 <h3>Julkaisuja tähän mennessä: {{ count }}</h3>
-<p>
 <hr>
 {% for message in messages %}
-{{ message.content }}
-<hr>
+<i>Viesti:</i> {{ message[0] }}
 <p>
+<i>Lähettäjä:</i> {{ message[1] }}
+<p>
+<i>Aika:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}
+<hr>
 {% endfor %}
-<a href="/login">Kirjaudu sisään lähettääksesi viestejä</a>
+{% if session.user_id %}
+Olet kirjautunut sisään.
+<a href="/new">Lähetä viesti</a> | <a href="/logout">Kirjaudu ulos</a>
+{% endif %}
+{% endblock %}

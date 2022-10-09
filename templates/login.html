@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+{% block content %}
 <form action="/login" method="post">
     Tunnus: <input type="text" name="username">
     <p>
@@ -5,4 +7,5 @@
     <p>
     <input type="submit" value="Kirjaudu">
     </form>
-    Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/">tästä</a>
+    Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/register">tästä</a>
+{% endblock %}
