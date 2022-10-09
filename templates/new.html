@@ -1,7 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
 Kerro jotain kivaa:
-<form action="/send" method="post">
+<form action="/send" method="POST">
+    Aihe: <br>
+    <textarea name="title" rows="1" cols="40"></textarea>
+    <br>
     Viesti: <br>
     <textarea name="content" rows="3" cols="40"></textarea>
     <br>

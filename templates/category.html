@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %}{{ category }}{% endblock %}
+{% block content %}
+<h1>{{ category }}</h1>
+<p>{{ count }} julkaisua</p>
+{% for post in posts %}
+<h3>{{ post[1] }}</h3>
+<p>{{ post[2] }}</p>
+<p>Lähettäjä: {{ post[5] }} aika: {{ post[3].strftime('%d.%m.%Y %H:%M:%S') }}</p>
+<button><a href="/category/{{ id }}/{{ post[0] }}">Katso koko viesti</a></button>
+<br>
+{% endfor %}
+<br>
+<button><a href="/">Back</a></button>
+{% endblock %}

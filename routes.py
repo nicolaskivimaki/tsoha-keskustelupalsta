@@ -1,24 +1,35 @@
 from app import app
 from flask import render_template, request, redirect
 import messages, categories, users
+from categories import get_categories_list, get_name, get_posts
 
 @app.route("/")
 def index():
-    categories.create_categories()
-    list = categories.get_categories_list()
-    return render_template("index.html", count=len(list), categories=list)
+    #categories.create_categories()
+    list = get_categories_list()
+    latest_post = messages.get_latest_post()
+    return render_template("index.html", count=len(list), categories=list, latest=latest_post)
+
+@app.route('/category/<int:id>', methods=['get'])
+def category(id):
+    if request.method == 'GET':
+        category = get_name(id)
+        posts = get_posts(id)
+        count = len(posts)
+        return render_template('category.html', id=id, category=category, posts=posts, count=count)
+
+@app.route("/send", methods=["POST"])
+def send():
+    title = request.form["title"]
+    content = request.form["content"]
+    if messages.new_post(title, content):
+        return redirect("/")
+    else:
+        return render_template("error.html", message="Viestin lähetys ei onnistunut")
 
 @app.route("/new")
 def new():
     return render_template("new.html")
-
-@app.route("/send", methods=["POST"])
-def send():
-    content = request.form["content"]
-    if messages.send(content):
-        return redirect("/")
-    else:
-        return render_template("error.html", message="Viestin lähetys ei onnistunut")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():

@@ -11,8 +11,9 @@ CREATE TABLE IF NOT EXISTS categories (
 
 CREATE TABLE IF NOT EXISTS posts (
     id SERIAL PRIMARY KEY,
+    title TEXT,
     content TEXT,
     user_id INTEGER REFERENCES users,
-    content_id INTEGER REFERENCES categories,
+    category_id INTEGER REFERENCES categories,
     sent_at TIMESTAMP
 );
