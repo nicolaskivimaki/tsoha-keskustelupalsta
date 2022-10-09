@@ -5,7 +5,7 @@ from categories import get_categories_list, get_name, get_posts
 
 @app.route("/")
 def index():
-    categories.create_categories()
+    #categories.create_categories()
     list = get_categories_list()
     latest_post = messages.get_latest_post()
     return render_template("index.html", count=len(list), categories=list, latest=latest_post)
