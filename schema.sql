@@ -3,33 +3,16 @@ CREATE TABLE IF NOT EXISTS users (
     username TEXT UNIQUE,
     password TEXT
 );
-CREATE TABLE IF NOT EXISTS rakkaus (
+
+CREATE TABLE IF NOT EXISTS categories (
     id SERIAL PRIMARY KEY,
-    content TEXT,
-    user_id INTEGER REFERENCES users,
-    sent_at TIMESTAMP
+    category TEXT
 );
-CREATE TABLE IF NOT EXISTS viihde (
+
+CREATE TABLE IF NOT EXISTS posts (
     id SERIAL PRIMARY KEY,
     content TEXT,
     user_id INTEGER REFERENCES users,
-    sent_at TIMESTAMP
-);
-CREATE TABLE IF NOT EXISTS fanifiktio (
-    id SERIAL PRIMARY KEY,
-    content TEXT,
-    user_id INTEGER REFERENCES users,
-    sent_at TIMESTAMP
-);
-CREATE TABLE IF NOT EXISTS urheilu (
-    id SERIAL PRIMARY KEY,
-    content TEXT,
-    user_id INTEGER REFERENCES users,
-    sent_at TIMESTAMP
-);
-CREATE TABLE IF NOT EXISTS politiikka (
-    id SERIAL PRIMARY KEY,
-    content TEXT,
-    user_id INTEGER REFERENCES users,
+    content_id INTEGER REFERENCES categories,
     sent_at TIMESTAMP
 );
