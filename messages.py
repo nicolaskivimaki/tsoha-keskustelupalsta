@@ -20,7 +20,7 @@ def new_postt(title, content, category_id):
 
 def new_post(title, content):
     user_id = get_user_id()
-    cid=4
+    cid=3
     if user_id == 0:
         return False
     sql = "INSERT INTO posts (title, content, user_id, category_id, sent_at) VALUES (:title, :content, :user_id, :category_id, now())"
