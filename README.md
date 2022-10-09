@@ -7,7 +7,8 @@ Sovelluksen saa käyttöön [Herokussa](https://tsoha-letstalkaboutlife.herokuap
 Sovelluksessa pystyy tällähetkellä:
 
 * Kirjautua sisään
-* Lukea keskustelupalstan postauksia
+* Rekisteröityä paltsalle
+* Lukea keskustelupalstan postauksia eri aiheista
 * Postata oman postauksen palstalle
 
 Sovelluksen ominaisuuksia:
