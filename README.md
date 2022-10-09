@@ -6,10 +6,10 @@ Sovelluksen saa käyttöön [Herokussa](https://tsoha-letstalkaboutlife.herokuap
 
 Sovelluksessa pystyy tällähetkellä:
 
-* Kirjautua sisään
+* Käyttäjä voi kirjautua sisään ja ulos
 * Rekisteröityä paltsalle
 * Lukea keskustelupalstan postauksia eri aiheista
-* Postata oman postauksen palstalle
+* Käyttäjä voi luoda alueelle uuden ketjun antamalla ketjun otsikon ja aloitusviestin sisällön.
 
 Sovelluksen ominaisuuksia:
 
