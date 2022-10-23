@@ -18,12 +18,11 @@ def new_postt(title, content, category_id):
     db.session.execute(sql, {'title':title, 'content':content, 'user_id':user_id, 'category_id':category_id})
     db.session.commit()
 
-def new_post(title, content):
+def new_post(title, content, id):
     user_id = get_user_id()
-    cid=5
     if user_id == 0:
         return False
     sql = "INSERT INTO posts (title, content, user_id, category_id, sent_at) VALUES (:title, :content, :user_id, :category_id, now())"
-    db.session.execute(sql, {"title":title, "content":content, "user_id":user_id, "category_id":cid})
+    db.session.execute(sql, {"title":title, "content":content, "user_id":user_id, "category_id":id})
     db.session.commit()
     return True

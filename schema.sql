@@ -17,3 +17,10 @@ CREATE TABLE IF NOT EXISTS posts (
     category_id INTEGER REFERENCES categories,
     sent_at TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS feedback ( 
+    id SERIAL PRIMARY KEY, 
+    content TEXT, 
+    user_id INTEGER REFERENCES users, 
+    sent_at TIMESTAMP
+);

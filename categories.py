@@ -1,9 +1,6 @@
 from db import db
 
-categories = ("opiskelu", "urheilu", "rakkaus", "fanifiktio", "politiikka")
-
-def create_categories():
-    for category in categories:
+def new_category(category):
         sql = 'INSERT INTO categories (category) VALUES (:category)'
         db.session.execute(sql, {'category':category})
         db.session.commit()
