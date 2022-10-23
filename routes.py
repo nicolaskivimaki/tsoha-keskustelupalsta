@@ -9,7 +9,6 @@ from categories import get_categories_list, get_name, get_posts, new_category
 
 @app.route("/")
 def index():
-    #categories.create_categories()
     list = get_categories_list()
     latest_post = messages.get_latest_post()
     return render_template("index.html", count=len(list), categories=list, latest=latest_post)
@@ -42,7 +41,7 @@ def send(id):
     title = request.form["title"]
     content = request.form["content"]
     if messages.new_post(title, content, id):
-        return redirect("/")
+        return redirect(f"/category/{id}")
     else:
         return render_template("error.html", message="Viestin lähetys ei onnistunut")
 
@@ -50,7 +49,7 @@ def send(id):
 def comment(id, post_id):
     comment = request.form["comment"]
     if new_comment(comment, post_id):
-        return redirect("/")
+        return redirect(f"/category/{id}/{post_id}")
     else:
         return render_template("error.html", message="Viestin lähetys ei onnistunut")
 
