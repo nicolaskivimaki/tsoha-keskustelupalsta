@@ -1,5 +1,12 @@
+
 {% extends "layout.html" %}
 {% block content %}
+
+<div class="topnav">
+    <a href="/">Etusivulle</a>
+    <a href="/login">Kirjaudu sisään</a>
+    <a href="/register">Rekisteröinti</a>
+</div>
 Kerro jotain kivaa:
 <form action="/send" method="POST">
     Aihe: <br>
@@ -10,4 +17,11 @@ Kerro jotain kivaa:
     <br>
     <input type="submit" value="Lähetä">
     </form>
+
+<p>
+<p>
+<div class="footer">
+    <a href="/logout">Kirjaudu ulos</a>
+    <br>
+</div>
 {% endblock %}

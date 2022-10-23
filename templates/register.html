@@ -1,5 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
+
+<div class="topnav">
+    <a href="/">Etusivulle</a>
+    <a href="/login">Kirjaudu sisään</a>
+    <a href="/register">Rekisteröinti</a>
+</div>
+<p>
 <form action="/register" method="post">
 Tunnus: <input type="text" name="username">
 <p>
@@ -9,4 +16,12 @@ Salasana uudestaan: <input type="password" name="password2">
 <p>
 <input type="submit" value="Luo tunnus">
 </form>
+
+<p>
+<p>
+<div class="footer">
+    <a href="/logout">Kirjaudu ulos</a>
+    <br>
+</div>
+
 {% endblock %}

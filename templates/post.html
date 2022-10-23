@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+<div class="post_main">
+    <h2>{{ post[1] }}</h2>
+    <p>{{ post[2] }}</p>
+    <h4>{{ post[5] }}</h4> <i>{{ post[3].strftime('%d.%m.%Y %H:%M:%S') }}</i>
+</div>
+<div class="comment_section">
+    <h3>Kommentit:</h3>
+    {% for comment in comments %}
+    <div class="comment">
+        <h3>{{ comment[0] }}</h3>
+        <p>{{ comment[1] }}</p>
+        <p>{{ comment[2].strftime('%d.%m.%Y %H:%M:%S') }}</p>
+    </div>
+    {% endfor %}
+    <br>
+    {% if session.user_id %}
+    <form action="/category/{{ id }}/{{ post[0] }}/comment" method="POST">
+    <h3>Jätä kommentti:</h3>
+    <textarea name="comment" rows="2" cols="40"></textarea>
+    <p>
+    <input type="submit" value="Lähetä">
+    </form>
+    {% endif %}
+</div>
+
+{% endblock %}

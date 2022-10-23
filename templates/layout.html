@@ -1,13 +1,27 @@
 <!doctype html>
-<title>Let's talk about life</title>
-<h1>Let's talk about life</h1>
-<a href="/">Etusivu</a>
-{% if session.user_id %}
-<a href="/logout">Kirjaudu ulos</a>
-{% else %}
-<a href="/login">Kirjaudu sisään</a>
-<a href="/register">Rekisteröidy</a>
-{% endif %}
-<hr>
+<link rel="stylesheet" href="/static/main.css">
+<style>
+    h1 {text-align: center;}
+    h6 {text-align: center;}
+    h6 {font-size: 100px;}
+</style>
+<br>
+<title>Let's talk about life &#x1F30E;</title>
+<div class="header">
+<h1>Let's talk about life &#x1F30E;</h1>
+</div>
+<div class="topnav">
+    <a href="/">Etusivu</a>
+    {% if session.user_id %}
+    <a href="/logout">Kirjaudu ulos</a>
+    {% else %}
+    <a href="/login">Kirjaudu sisään</a>
+    <a href="/register">Rekisteröinti</a>
+    {% endif %}
+</div>
 {% block content %}{% endblock %}
-
+<br>
+<div class="footer">
+    <a href="/feedback">Anna palautetta</a>
+    <br>
+</div>

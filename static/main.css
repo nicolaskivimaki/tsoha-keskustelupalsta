@@ -1,0 +1,97 @@
+body {
+    margin: auto;
+    max-width: 75em;
+    font-family:'Helvetica';
+    background-color: #ffffff;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 0 1em 0 0;
+}
+
+.hd {
+    background: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 2em 2em;
+    font-size: 2rem;
+
+}
+
+.topnav {
+    width: 100%;
+    margin: auto;
+    background-color: rgb(68, 134, 77);
+    overflow: hidden;
+    padding: 40px;
+}
+
+.topnav a {
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.posts {
+    background-color: rgb(154, 214, 224);
+    width: 80%;
+    border: 0px solid rgb(154, 214, 224);
+    border-radius: 25px;
+    padding: 40px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.bottom_text_input {
+    background-color: rgb(255, 255, 255);
+    margin-left: 80px;
+    width: 100%
+}
+.category_section {
+    background-color: rgb(255, 255, 255);
+    margin-left: 40px;
+    width: 100%
+}
+
+.comment_section {
+    background-color: rgb(255, 255, 255);
+    margin-left: 40px;
+    width: 100%
+}
+
+.comment {
+    border: 2px solid rgb(68, 134, 77);
+    border-radius: 25px;
+    padding: 40px;
+}
+.post_main {
+    background-color: rgb(154, 214, 224);
+    width: 100%;
+    border: 0px solid rgb(154, 214, 224);
+    border-radius: 25px;
+    padding: 40px;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 5px;
+}
+
+.footer {
+    margin: auto;
+    bottom: 1;
+    background-color: rgb(68, 134, 77);
+    width: 100%;
+    border-top: 0px black solid;
+    margin-bottom: 50px;
+    padding: 40px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #fcf9f9;
+    text-align: center;
+    font-size: 18px;
+}

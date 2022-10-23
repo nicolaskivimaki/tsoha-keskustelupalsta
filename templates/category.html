@@ -1,15 +1,29 @@
-{% extends 'layout.html' %}
-{% block title %}{{ category }}{% endblock %}
+{% extends "layout.html" %}
 {% block content %}
 <h1>{{ category }}</h1>
 <p>{{ count }} julkaisua</p>
 {% for post in posts %}
-<h3>{{ post[1] }}</h3>
-<p>{{ post[2] }}</p>
-<p>Lähettäjä: {{ post[5] }} aika: {{ post[3].strftime('%d.%m.%Y %H:%M:%S') }}</p>
-<button><a href="/category/{{ id }}/{{ post[0] }}">Katso koko viesti</a></button>
-<br>
+<div class="posts">
+    <h3>{{ post[1] }}</h3>
+    <p>{{ post[2] }}</p>
+    <p>Lähettäjä: {{ post[5] }} aika: {{ post[3].strftime('%d.%m.%Y %H:%M:%S') }}</p>
+    <button><a href="/category/{{ id }}/{{ post[0] }}">Katso koko keskustelu</a></button>
+</div>
 {% endfor %}
 <br>
-<button><a href="/">Back</a></button>
+{% if session.user_id %}
+<div class="bottom_text_input">
+    <h3>Aloita uusi keskustelu:</h3>
+    <form action="/category/{{ id }}/send" method="POST">
+        Aihe: <br>
+        <textarea name="title" rows="1" cols="40"></textarea>
+        <br>
+        Viesti: <br>
+        <textarea name="content" rows="3" cols="40"></textarea>
+        <br>
+        <input type="submit" value="Lähetä">
+        </form>
+</div>
+<p>
+{% endif %}
 {% endblock %}

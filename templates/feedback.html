@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Anna palautetta</h1>
+{% if session.user_id %}
+<form action="/feedback/send" method="POST">
+    <textarea name="content" rows="2" cols="40"></textarea>
+    <p>
+    <input type="submit" value="Lähetä palaute">
+    </form>
+<br>
+<h2>Palautteet:</h2>
+<br>
+{% for feedback in feedback_list %}
+<div class="posts">
+    <h4>{{ feedback[0] }}</h4>
+    <p>
+    <i>{{ feedback[1] }}</i><br>
+    <i>{{ feedback[2].strftime('%d.%m.%Y %H:%M:%S') }}</i>
+</div>
+{% endfor %}
+{% else %}
+<p>
+    Sinun täytyy kirjautua sisään antaaksesi palautetta.
+</p>
+{% endif %}
+{% endblock %}

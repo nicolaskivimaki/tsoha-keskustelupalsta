@@ -1,15 +1,23 @@
 {% extends "layout.html" %}
 {% block content %}
-<h2> Tervetuloa LTAL-keskustelupalstalle!!</h2> 
+
+<h2> Tervetuloa LTAL-keskustelupalstalle!</h2> 
 <h3>Keskustelualueet:</h3>
-<hr>
 {% for category in categories %}
-<button><a href="/category/{{ category['id'] }}">{{ category['category'] }}</a></button>
-</p>
-<hr>
+<div class="posts">
+    <a href="/category/{{ category['id'] }}">{{ category['category'] }}</a>
+</div>
 {% endfor %}
 {% if session.user_id %}
-Olet kirjautunut sisään.
-<a href="/new">Lähetä viesti</a> | <a href="/logout">Kirjaudu ulos</a>
+<div class="bottom_text_input">
+    <h3>Luo uusi keskustelualue:</h3>
+    <form action="/newcategory" method="POST">
+        Aihe: <br>
+        <textarea name="category" rows="1" cols="40"></textarea>
+        <br>
+        <input type="submit" value="Lähetä">
+        </form>
+</div>
+<p>
 {% endif %}
 {% endblock %}
