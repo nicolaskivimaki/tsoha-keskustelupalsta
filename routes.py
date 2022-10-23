@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, redirect
-import messages, categories, users
+import messages, users
 from posts import get_post
 from comments import *
 from likes import *

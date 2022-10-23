@@ -6,6 +6,7 @@
     <textarea name="content" rows="2" cols="40"></textarea>
     <p>
     <input type="submit" value="Lähetä palaute">
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
     </form>
 <br>
 <h2>Palautteet:</h2>
